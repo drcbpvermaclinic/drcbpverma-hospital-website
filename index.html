@@ -45,10 +45,7 @@ header {
 }
 .logo { font-size: 22px; font-weight: 700; color: var(--primary); }
 .nav-links { display: flex; align-items: center; gap: 20px; }
-.nav-links > a, .nav-links li > a {
-  font-weight: 500;
-  position: relative;
-}
+.nav-links > a, .nav-links li > a { font-weight: 500; position: relative; }
 .nav-links a::after, .nav-links li > a::after {
   content: '';
   position: absolute;
@@ -108,9 +105,13 @@ header {
 }
 .nav-links .appointment-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-/* Other sections same as previous code (HERO, SERVICES, SLIDERS, FAQ, GALLERY, REVIEW, FOOTER, STICKY BUTTONS, MAP) */
-
-.hero { background: linear-gradient(rgba(15,76,117,0.85), rgba(15,76,117,0.85)), url('hospital.jpg') center/cover; color: #fff; padding: 100px 20px; text-align: center; }
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(rgba(15,76,117,0.85), rgba(15,76,117,0.85)), url('hospital.jpg') center/cover;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
 .hero h1 { font-size: 42px; margin-bottom: 15px; }
 .hero p { font-size: 18px; margin-bottom: 30px; }
 .hero-buttons a { display: inline-block; padding: 14px 30px; margin: 10px; border-radius: 30px; font-weight: 600; transition: 0.3s; }
@@ -119,10 +120,13 @@ header {
 .btn-outline { border: 2px solid #fff; }
 .btn-outline:hover { background: #fff; color: var(--primary); }
 
+/* ================= SECTION ================= */
 section { padding: 70px 20px; }
 .container { max-width: 1200px; margin: auto; }
 .section-title { text-align: center; margin-bottom: 50px; }
 .section-title h2 { color: var(--primary); font-size: 32px; }
+
+/* ================= CARDS ================= */
 .card-grid, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
 .card, .services-card, .testimonial, .doctor-card { text-align: center; background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: 0.4s; }
 .card i, .services-card i { font-size: 40px; margin-bottom: 15px; }
@@ -130,48 +134,51 @@ section { padding: 70px 20px; }
 .services-card i { color: var(--accent); }
 .card:hover, .services-card:hover, .testimonial:hover, .doctor-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
 
-/* Doctor Slider */
+/* ================= DOCTOR SLIDER ================= */
 .doctor-slider, .testimonial-slider { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 10px; scroll-behavior: smooth; }
-.doctor-card { min-width: 250px; flex-shrink: 0; }
+.doctor-card, .testimonial { min-width: 250px; flex-shrink: 0; }
 .doctor-card img { width: 100%; border-radius: 15px 15px 0 0; }
 .doctor-card h4 { margin: 10px 0 5px; color: var(--primary); }
-.testimonial { min-width: 250px; flex-shrink: 0; background: var(--secondary); color: #fff; padding: 30px; border-radius: 20px; }
+.testimonial { background: var(--secondary); color: #fff; padding: 30px; border-radius: 20px; }
+.testimonial p { margin-bottom: 15px; font-style: italic; }
+.testimonial h4 { font-weight: 600; }
 
-/* FAQ */
+/* ================= FAQ ================= */
 .faq-item { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; }
 .faq-item button { width: 100%; background: var(--primary); color: #fff; padding: 15px; border: none; text-align: left; font-size: 16px; cursor: pointer; transition: 0.3s; }
 .faq-item button:hover { background: var(--secondary); }
 .faq-item p { padding: 15px; display: none; background: #f9f9f9; }
 
-/* Gallery */
+/* ================= GALLERY ================= */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
 .gallery-grid img { width: 100%; border-radius: 15px; transition: 0.3s; cursor: pointer; }
 .gallery-grid img:hover { transform: scale(1.05); }
 .gallery-button { display: block; text-align: center; margin-top: 20px; padding: 12px 30px; background: var(--accent); color: #000; border-radius: 30px; font-weight: 600; transition: 0.3s; }
 .gallery-button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
 
-/* Review */
+/* ================= REVIEW ================= */
 .review-box { background: var(--primary); color: #fff; padding: 50px; border-radius: 20px; text-align: center; }
 .review-box a { display: inline-block; margin-top: 20px; padding: 12px 25px; background: var(--accent); color: #000; border-radius: 25px; font-weight: 600; }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer { background: #0a2e44; color: #fff; padding: 60px 20px 30px; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 .footer-logo { display: block; margin-bottom: 20px; width: 120px; }
 
-/* Sticky buttons */
+/* ================= STICKY BUTTONS ================= */
 .sticky-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
 .sticky-buttons a { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 26px; transition: 0.3s; }
 .call-btn { background: linear-gradient(45deg, #28a745, #1e7e34); }
 .whatsapp-btn { background: linear-gradient(45deg, #25D366, #128C7E); }
 
-/* Map */
+/* ================= MAP ================= */
 .map-container iframe { width: 100%; height: 400px; border-radius: 15px; border: none; }
 
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header>
   <div class="navbar">
     <div class="logo">Dr CBP Verma Memorial Poly Clinic</div>
@@ -199,16 +206,143 @@ footer { background: #0a2e44; color: #fff; padding: 60px 20px 30px; }
   </div>
 </header>
 
-<!-- Hero, Services, Doctor slider, Testimonials, FAQ, Gallery, Review sections remain same as previous code -->
+<!-- HERO -->
+<section class="hero">
+  <h1>Trusted Healthcare for Madhopur & Samastipur</h1>
+  <p>Ayushman Bharat Approved • Expert Doctors • Compassionate Care</p>
+  <div class="hero-buttons">
+    <a href="appointment.html" class="btn-primary">Book Appointment</a>
+    <a href="services.html" class="btn-outline">Our Services</a>
+  </div>
+</section>
 
-<!-- Google Map functional -->
+<!-- Why Choose Us -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Why Choose Us</h2></div>
+    <div class="card-grid">
+      <div class="card"><i class="fas fa-hospital"></i><h3>Ayushman Bharat</h3><p>Cashless treatment facility available</p></div>
+      <div class="card"><i class="fas fa-user-md"></i><h3>Expert Doctors</h3><p>Specialists across multiple fields</p></div>
+      <div class="card"><i class="fas fa-heart"></i><h3>Patient Care</h3><p>Compassionate & ethical treatment</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Our Services</h2></div>
+    <div class="services-grid">
+      <div class="services-card"><i class="fas fa-procedures"></i><h3>OPD</h3></div>
+      <div class="services-card"><i class="fas fa-user-md"></i><h3>Surgeries</h3></div>
+      <div class="services-card"><i class="fas fa-prescription-bottle-alt"></i><h3>Medical Shop</h3></div>
+      <div class="services-card"><i class="fas fa-x-ray"></i><h3>X-Ray</h3></div>
+      <div class="services-card"><i class="fas fa-vials"></i><h3>Labs</h3></div>
+      <div class="services-card"><i class="fas fa-ambulance"></i><h3>Ambulance</h3></div>
+      <div class="services-card"><i class="fas fa-heartbeat"></i><h3>Emergency Services</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctor Slider -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Meet Our Doctors</h2></div>
+    <div class="doctor-slider">
+      <div class="doctor-card"><img src="doctor1.jpg" alt="Dr ABC"><h4>Dr ABC</h4><p>Cardiologist</p></div>
+      <div class="doctor-card"><img src="doctor2.jpg" alt="Dr XYZ"><h4>Dr XYZ</h4><p>Orthopedic</p></div>
+      <div class="doctor-card"><img src="doctor3.jpg" alt="Dr PQR"><h4>Dr PQR</h4><p>General Medicine</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Testimonials</h2></div>
+    <div class="testimonial-slider">
+      <div class="testimonial"><p>"Amazing doctors and staff! Truly compassionate."</p><h4>Ramesh Kumar</h4></div>
+      <div class="testimonial"><p>"Excellent healthcare service and timely attention."</p><h4>Seema Devi</h4></div>
+      <div class="testimonial"><p>"Best clinic in Madhopur. Highly recommended!"</p><h4>Anil Sharma</h4></div>
+      <div class="testimonial"><p>"Friendly staff and top-notch facilities."</p><h4>Priya Singh</h4></div>
+      <div class="testimonial"><p>"Timely and professional treatment for my family."</p><h4>Vikram Yadav</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>FAQs</h2></div>
+    <div class="faq-item"><button>What are the OPD timings?</button><p>10:00 AM – 2:00 PM</p></div>
+    <div class="faq-item"><button>Do you provide cashless treatment?</button><p>Yes, we are Ayushman Bharat approved and offer cashless treatment.</p></div>
+    <div class="faq-item"><button>How can I book an appointment?</button><p>You can book online via our website or contact us via WhatsApp/phone.</p></div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section>
+  <div class="container">
+    <div class="section-title"><h2>Gallery</h2></div>
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery 1">
+      <img src="gallery2.jpg" alt="Gallery 2">
+      <img src="gallery3.jpg" alt="Gallery 3">
+      <img src="gallery4.jpg" alt="Gallery 4">
+    </div>
+    <a href="gallery.html" class="gallery-button">View More Images</a>
+  </div>
+</section>
+
+<!-- Google Map -->
 <section>
   <div class="container map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.662521382472!2d85.80433447505203!3d25.93328398361581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e2f5d2b6a1b7%3A0x1de56f33e7bb1ec0!2sMadhopur%2C%20Samastipur%2C%20Bihar!5e0!3m2!1sen!2sin!4v1674800000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
   </div>
 </section>
 
-<!-- Footer and Sticky Buttons same as previous code -->
+<!-- Review -->
+<section>
+  <div class="container">
+    <div class="review-box">
+      <h2>Share Your Experience</h2>
+      <p>We value your feedback! Help us improve and serve you better.</p>
+      <a href="https://www.google.com/search?q=Dr+CBP+Verma+Memorial+Poly+Clinic&ludocid=0" target="_blank">Leave a Review</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <img src="favicon.png" class="footer-logo" alt="Logo">
+      <p>Dr CBP Verma Memorial Poly Clinic</p>
+      <p>Madhopur, Samastipur, Bihar</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Phone: +91 12345 67890</p>
+      <p>Email: info@cbppolyclinic.com</p>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:20px;">&copy; 2026 Dr CBP Verma Memorial Poly Clinic</p>
+</footer>
+
+<!-- Sticky Buttons -->
+<div class="sticky-buttons">
+  <a href="tel:+911234567890" class="call-btn"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/911234567890" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
 
 <script>
 // Navbar toggle
