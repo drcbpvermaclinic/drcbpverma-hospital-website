@@ -1,79 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact & Appointment | Dr CBP Verma Memorial Poly Clinic</title>
-  <meta name="description" content="Contact Dr CBP Verma Memorial Poly Clinic, Samastipur. Book OPD appointments and Ayushman Bharat services." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Dr CBP Verma Memorial Poly Clinic</title>
+<meta name="description" content="Contact Dr CBP Verma Memorial Poly Clinic, Samastipur. Reach out via WhatsApp, call, or message.">
 
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; }
-    header { background:#0b5ed7; color:#fff; padding:15px; }
-    nav a { color:#fff; margin-right:15px; text-decoration:none; }
-    .container { padding:30px; max-width:900px; margin:auto; }
-    form { border:1px solid #ddd; padding:20px; margin-bottom:30px; border-radius:6px; }
-    input, textarea, select, button {
-      width:100%; padding:10px; margin-top:10px;
-    }
-    button { background:#0b5ed7; color:#fff; border:none; cursor:pointer; }
-    iframe { width:100%; height:300px; border:0; }
-  </style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #0f4c75;
+  --secondary: #1b9aaa;
+  --accent: #f4a261;
+  --light: #f9f9f9;
+  --dark: #1a1a1a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: var(--light); color: var(--dark); line-height: 1.6; }
+
+/* ================= NAVBAR ================= */
+header {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 22px; font-weight: 700; color: var(--primary); }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links > a, .nav-links li > a { font-weight: 500; position: relative; color: var(--dark);}
+.nav-links a::after, .nav-links li > a::after { content: ''; position: absolute; width: 0; height: 2px; background: var(--secondary); left: 0; bottom: -5px; transition: 0.3s; }
+.nav-links a:hover::after, .nav-links li > a:hover::after { width: 100%; }
+
+/* Dropdown */
+.nav-links ul { list-style: none; position: relative; }
+.nav-links ul li { position: relative; }
+.nav-links ul li ul {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: none;
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  min-width: 180px;
+  z-index: 100;
+}
+.nav-links ul li:hover > ul { display: block; }
+.nav-links ul li ul li { padding: 10px 20px; }
+.nav-links ul li ul li a { color: var(--dark); }
+.nav-links ul li ul li a:hover { color: var(--secondary); }
+
+/* Hamburger */
+.menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--primary); }
+@media (max-width: 991px) {
+  .nav-links { position: fixed; top: 70px; right: -100%; flex-direction: column; background: #fff; width: 250px; height: calc(100% - 70px); padding-top: 20px; transition: 0.3s; box-shadow: -2px 0 10px rgba(0,0,0,0.1); }
+  .nav-links.active { right: 0; }
+  .nav-links a, .nav-links ul li { margin: 15px 0; }
+  .nav-links ul li ul { position: static; box-shadow: none; display: none; }
+  .nav-links ul li.active ul { display: block; }
+  .menu-toggle { display: block; }
+}
+
+/* Hero / Header section */
+.hero-section { background: linear-gradient(rgba(15,76,117,0.85), rgba(15,76,117,0.85)), url('hospital.jpg') center/cover; padding: 80px 20px; text-align: center; color: #fff; }
+.hero-section h1 { font-size: 42px; margin-bottom: 15px; }
+.hero-section p { font-size: 18px; margin-bottom: 20px; }
+
+/* Container */
+.container { max-width: 1100px; margin: auto; padding: 40px 20px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+/* Contact Info */
+.contact-info p { margin: 10px 0; font-size: 16px; }
+.contact-info strong { color: var(--primary); }
+
+/* Contact Form */
+.contact-form { margin-top: 30px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 15px; }
+.contact-form button { background: var(--accent); color: #000; font-weight: 600; border: none; padding: 15px; width: 100%; border-radius: 25px; cursor: pointer; transition: 0.3s; }
+.contact-form button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+/* WhatsApp / Call buttons */
+.sticky-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+.sticky-buttons a { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; }
+.call-btn { background: linear-gradient(45deg, #28a745, #1e7e34); }
+.call-btn:hover { transform: scale(1.1); }
+.whatsapp-btn { background: linear-gradient(45deg, #25D366, #128C7E); }
+.whatsapp-btn:hover { transform: scale(1.1); }
+
+/* Map */
+.map-container { margin-top: 40px; border-radius: 15px; overflow: hidden; }
+.map-container iframe { width: 100%; height: 400px; border: none; border-radius: 15px; }
+
+/* Footer */
+footer { background: #0a2e44; color: #fff; padding: 60px 20px 30px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin:auto; }
+.footer-grid h3 { color: var(--accent); margin-bottom: 15px; }
+.footer-grid p, .footer-grid a { font-size: 14px; opacity: 0.9; }
+.footer-logo { display: block; margin-bottom: 20px; width: 120px; }
+.footer-bottom { text-align: center; margin-top: 30px; font-size: 13px; opacity: 0.7; }
+
+/* Responsive */
+@media(max-width:600px){ .hero-section h1{font-size:32px;} .hero-section p{font-size:16px;} }
+</style>
 </head>
 
 <body>
 
+<!-- Navbar -->
 <header>
-  <h2>Contact Us</h2>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="navbar">
+    <div class="logo">Dr CBP Verma Memorial Poly Clinic</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <ul>
+        <li><a href="#">Services <i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">OPD</a></li>
+            <li><a href="#">Surgeries</a></li>
+            <li><a href="#">Medical Shop</a></li>
+            <li><a href="#">X-Ray</a></li>
+            <li><a href="#">Labs</a></li>
+            <li><a href="#">Ambulance</a></li>
+            <li><a href="#">Emergency Services</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="doctors.html">Doctors</a>
+      <a href="blog.html">Health Blog</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="appointment.html" class="appointment-btn">Book Appointment</a>
+    </div>
+  </div>
 </header>
+
+<!-- Hero -->
+<section class="hero-section">
+  <h1>Contact & Connect With Us</h1>
+  <p>Reach us directly via phone, WhatsApp, or message. We are here for you!</p>
+</section>
 
 <div class="container">
 
-  <h3>📞 Contact Details</h3>
-  <p><strong>Phone:</strong> 7464070292, 9931993934</p>
-  <p><strong>Email:</strong> drcbpvermamemorialpolyclinic@gmail.com</p>
-  <p><strong>OPD:</strong> 10:00 AM – 2:00 PM (Daily)</p>
+  <!-- Contact Info -->
+  <div class="contact-info">
+    <h3>📞 Contact Details</h3>
+    <p><strong>Phone:</strong> 7464070292 / 9931993934</p>
+    <p><strong>Email:</strong> drcbpvermamemorialpolyclinic@gmail.com</p>
+    <p><strong>OPD:</strong> 10:00 AM – 2:00 PM (Daily)</p>
+  </div>
 
-  <h3>📝 Book Appointment (Request)</h3>
-    <form name="appointment" method="POST" data-netlify="true" action="/thank-you.html">
-    <input type="hidden" name="form-name" value="appointment">
+  <!-- Contact Form -->
+  <div class="contact-form">
+    <h3>✉️ Send a Message</h3>
+    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Mobile Number" required>
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
-    <input type="text" name="patient_name" placeholder="Patient Name" required>
-    <input type="tel" name="mobile" placeholder="Mobile Number" required>
-
-    <select name="doctor">
-      <option>Select Doctor</option>
-      <option>Dr A.K. Verma</option>
-      <option>Dr Amit Kumar</option>
-      <option>Dr A.K. Gupta (Ortho)</option>
-    </select>
-
-    <input type="date" name="preferred_date" required>
-    <textarea name="message" placeholder="Problem (optional)"></textarea>
-
-    <button type="submit">Submit Appointment Request</button>
-  </form>
-
-  <h3>✉️ Send a Message</h3>
-  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
-    <input type="hidden" name="form-name" value="contact">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Mobile Number" required>
-    <textarea name="message" placeholder="Your Message"></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-
-  <h3>📍 Find Us</h3>
-  <iframe 
-    src="https://www.google.com/maps?q=Madhopur+Bibhutipur+Samastipur&output=embed">
-  </iframe>
+  <!-- Google Map -->
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Madhopur+Bibhutipur+Samastipur&output=embed"></iframe>
+  </div>
 
 </div>
+
+<!-- Sticky WhatsApp & Call -->
+<div class="sticky-buttons">
+  <a href="tel:+917464070292" class="call-btn"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-grid">
+    <img src="favicon.png" class="footer-logo" alt="Clinic Logo">
+    <div>
+      <h3>Clinic Address</h3>
+      <p>Madhopur, Bibhutipur, Samastipur – 848211</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>📞 7464070292 / 9931993934</p>
+      <p>✉ drcbpvermamemorialpolyclinic@gmail.com</p>
+    </div>
+    <div>
+      <h3>OPD Timing</h3>
+      <p>10:00 AM – 2:00 PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Dr CBP Verma Memorial Poly Clinic</div>
+</footer>
+
+<script>
+// Navbar toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+// Mobile dropdown toggle
+const dropdowns = document.querySelectorAll('.nav-links ul li > a');
+dropdowns.forEach(drop => {
+  drop.addEventListener('click', (e) => {
+    if(window.innerWidth <= 991){
+      e.preventDefault();
+      drop.parentElement.classList.toggle('active');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
