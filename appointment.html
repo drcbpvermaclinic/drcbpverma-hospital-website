@@ -6,86 +6,115 @@
 <title>Book Appointment | Dr CBP Verma Memorial Poly Clinic</title>
 <meta name="description" content="Book your OPD appointment at Dr CBP Verma Memorial Poly Clinic, Madhopur. Fast, easy, and secure booking online.">
 
-<!-- Google Fonts -->
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-:root {
-  --primary: #0f4c75;
-  --secondary: #1b9aaa;
-  --accent: #f4a261;
-  --light: #f9f9f9;
-  --dark: #1a1a1a;
+:root{
+  --primary:#0f4c75;
+  --secondary:#1b9aaa;
+  --accent:#f4a261;
+  --dark:#1a1a1a;
+  --light:#f5f7fb;
 }
 
-/* ===== GENERAL ===== */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-body{background:var(--light); color:var(--dark); line-height:1.6;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--light);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+
 
 /* ================= NAVBAR ================= */
 header{
+  position:sticky;top:0;z-index:1000;
   background:#fff;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  position:sticky;
-  top:0;
-  z-index:1000;
+  box-shadow:0 8px 30px rgba(0,0,0,.08)
 }
-.navbar{max-width:1200px; margin:auto; padding:15px 20px; display:flex; justify-content:space-between; align-items:center;}
+.navbar{
+  max-width:1200px;margin:auto;
+  padding:15px 20px;
+  display:flex;justify-content:space-between;align-items:center
+}
 .logo{
   font-size:22px;
   font-weight:700;
   color:var(--primary);
-  transition:.3s;
+  transition: 0.3s;
 }
 .logo:hover{
-  color: var(--accent);
-  transform: scale(1.05);
+  color:BLACK(--accent);
+  transform: scale(1);
   text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
+
 .nav-links{
-  display:flex;
-  align-items:center;
-  gap:26px;
+  display:flex;align-items:center;gap:26px
 }
-.nav-links a{
-  font-weight:500;
-  position:relative;
-  color: var(--dark);
-}
+.nav-links a{font-weight:500;position:relative}
+
 .nav-links a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:var(--secondary);
-  transition:.3s
+  content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;
+  background:var(--secondary);transition:.3s
 }
-.nav-links a:hover::after{width:100%;}
+.nav-links a:hover::after{width:100%}
+
+
+.menu-toggle{
+  display:none;font-size:26px;
+  cursor:pointer;color:var(--primary)
+}
+
+/* Appointment Button */
+.appointment-btn{
+  background:linear-gradient(45deg,var(--accent),#ffd166);
+  padding:10px 22px;
+  border-radius:30px;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(244,162,97,.4)
+}
+.appointment-btn::after{display:none}
+.appointment-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(244,162,97,.6)
+}
 
 /* Dropdown */
-.nav-links ul { list-style:none; position:relative; }
-.nav-links ul li { position:relative; }
-.nav-links ul li ul { position:absolute; top:36px; left:0; display:none; background:#fff; padding:10px 0; box-shadow:0 15px 40px rgba(0,0,0,.15); border-radius:12px; min-width:200px; }
-.nav-links ul li:hover > ul { display:block; }
-.nav-links ul li ul li { padding:10px 20px; }
-.nav-links ul li ul li a { color: var(--dark); text-decoration:none; }
-.nav-links ul li ul li a:hover { color: var(--secondary); }
+.nav-links ul{list-style:none}
+.nav-links ul li{position:relative}
+.nav-links ul li ul{
+  position:absolute;top:36px;left:0;
+  background:#fff;
+  min-width:200px;
+  border-radius:12px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  display:none;padding:10px 0
+}
+.nav-links ul li:hover ul{display:block}
+.nav-links ul li ul a{
+  display:block;padding:10px 20px;font-size:14px
+}
+.nav-links ul li ul a:hover{
+  background:rgba(27,154,170,.1);
+  color:var(--secondary)
+}
 
-/* Hamburger */
-.menu-toggle { display:none; font-size:26px; cursor:pointer; color: var(--primary); }
+/* Mobile */
 @media(max-width:991px){
-  .nav-links{position:fixed; top:70px; right:-100%; flex-direction:column; background:#fff; width:260px; height:calc(100%-70px); padding-top:30px; transition:.3s; box-shadow:-2px 0 10px rgba(0,0,0,0.1);}
-  .nav-links.active{right:0;}
-  .nav-links a,.nav-links ul li{margin:15px 0;}
-  .nav-links ul li ul{position:static; box-shadow:none; display:none;}
-  .nav-links ul li.active ul{display:block;}
-  .menu-toggle{display:block;}
+  .menu-toggle{display:block}
+  .nav-links{
+    position:fixed;top:70px;right:-100%;
+    width:260px;height:calc(100% - 70px);
+    background:#fff;
+    flex-direction:column;
+    padding-top:30px;
+    transition:.3s
+  }
+  .nav-links.active{right:0}
+  .nav-links ul li ul{
+    position:static;
+    box-shadow:none
+  }
 }
 
 /* ================= HERO ================= */
