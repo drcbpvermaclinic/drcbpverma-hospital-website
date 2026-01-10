@@ -93,6 +93,129 @@ header{
   .nav-links.active{right:0}
 }
 
+
+
+/* ================= NAVBAR ENHANCEMENTS ================= */
+
+/* Remove default underline everywhere */
+.nav-links a {
+  text-decoration: none;
+}
+
+/* Premium hover underline animation */
+.nav-links > a,
+.nav-links ul li > a {
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-links > a::after,
+.nav-links ul li > a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: width 0.35s ease;
+}
+
+.nav-links > a:hover::after,
+.nav-links ul li > a:hover::after {
+  width: 100%;
+}
+
+/* Navbar spacing on desktop */
+@media (min-width: 992px) {
+  .nav-links {
+    gap: 26px;
+  }
+}
+
+/* ================= BOOK APPOINTMENT BUTTON ================= */
+.appointment-btn {
+  background: linear-gradient(45deg, var(--accent), #f1c27d);
+  color: #000 !important;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(244,162,97,0.4);
+  transition: all 0.35s ease;
+}
+
+/* Disable underline for button */
+.appointment-btn::after {
+  display: none !important;
+}
+
+/* Hover animation */
+.appointment-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(244,162,97,0.6);
+}
+
+/* ================= DROPDOWN STYLING ================= */
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links ul li {
+  position: relative;
+}
+
+/* Dropdown box */
+.nav-links ul li ul {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover (desktop) */
+@media (min-width: 992px) {
+  .nav-links ul li:hover > ul {
+    display: block;
+  }
+}
+
+/* Dropdown links */
+.nav-links ul li ul li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.nav-links ul li ul li a:hover {
+  background: rgba(27,154,170,0.08);
+  color: var(--secondary);
+}
+
+/* ================= MOBILE DROPDOWN ================= */
+@media (max-width: 991px) {
+  .nav-links ul li ul {
+    position: static;
+    box-shadow: none;
+    display: none;
+    padding-left: 10px;
+  }
+
+  .nav-links ul li.active ul {
+    display: block;
+  }
+}
+
+  
 /* ================= HERO ================= */
 .hero{
   background:linear-gradient(rgba(15,76,117,.85),rgba(15,76,117,.85)),
@@ -231,15 +354,33 @@ footer a:hover{opacity:1}
 <body>
 
 <header>
-  <div class="navbar">
-    <div class="logo">Dr CBP Verma Memorial Poly Clinic</div>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="appointment.html">Book Appointment</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
+ <div class="nav-links">
+  <a href="index.html">Home</a>
+
+  <!-- Dropdown -->
+  <ul>
+    <li>
+      <a href="#">Services <i class="fas fa-caret-down"></i></a>
+      <ul>
+        <li><a href="#">OPD</a></li>
+        <li><a href="#">Surgeries</a></li>
+        <li><a href="#">Medical Shop</a></li>
+        <li><a href="#">X-Ray</a></li>
+        <li><a href="#">Labs</a></li>
+        <li><a href="#">Ambulance</a></li>
+        <li><a href="#">Emergency Services</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <a href="doctors.html">Doctors</a>
+  <a href="blog.html">Health Blog</a>
+  <a href="contact.html">Contact</a>
+
+  <!-- Highlighted Button -->
+  <a href="appointment.html" class="appointment-btn">Book Appointment</a>
+</div>
+
 </header>
 
 <section class="hero">
