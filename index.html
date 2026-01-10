@@ -526,6 +526,51 @@ footer {
   transform:scale(1.05);
 }
 
+
+  /* ===== FOOTER QUICK LINKS BUTTON STYLE (ADD-ON) ===== */
+.footer-card a{
+  display:inline-block;
+  padding:8px 16px;
+  margin:6px 0;
+  border-radius:25px;
+  background:rgba(255,255,255,0.08);
+  font-size:14px;
+  font-weight:500;
+  transition:all 0.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Hover Effect */
+.footer-card a:hover{
+  background:var(--accent);
+  color:#000 !important;
+  transform:translateX(6px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Subtle glow line effect */
+.footer-card a::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition:0.5s;
+}
+
+.footer-card a:hover::before{
+  left:100%;
+}
+
+
 </style>
 </head>
 <body>
