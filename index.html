@@ -8,6 +8,9 @@
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -142,6 +145,51 @@ section { padding: 70px 20px; }
 .testimonial { background: var(--secondary); color: #fff; padding: 30px; border-radius: 20px; }
 .testimonial p { margin-bottom: 15px; font-style: italic; }
 .testimonial h4 { font-weight: 600; }
+
+.doctor-card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.doctor-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.doctor-icon{
+  width:120px;
+  height:120px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#0d6efd,#00c6ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.doctor-icon i{
+  font-size:55px;
+  color:#fff;
+}
+
+.doctor-card h4{
+  margin:10px 0 5px;
+  color:#222;
+}
+
+.doctor-card p{
+  color:#666;
+  font-size:14px;
+}
+
+.doctor-card:hover .doctor-icon i{
+  transform:rotate(8deg) scale(1.1);
+}
+
 
 /* ================= FAQ ================= */
 .faq-item { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; }
@@ -427,17 +475,40 @@ footer {
   </div>
 </section>
 
-<!-- Doctor Slider -->
 <section>
   <div class="container">
     <div class="section-title"><h2>Meet Our Doctors</h2></div>
+
     <div class="doctor-slider">
-      <div class="doctor-card"><img src="doctor1.jpg" alt="Dr ABC"><h4>Dr ABC</h4><p>Cardiologist</p></div>
-      <div class="doctor-card"><img src="doctor2.jpg" alt="Dr XYZ"><h4>Dr XYZ</h4><p>Orthopedic</p></div>
-      <div class="doctor-card"><img src="doctor3.jpg" alt="Dr PQR"><h4>Dr PQR</h4><p>General Medicine</p></div>
+
+      <div class="doctor-card">
+        <div class="doctor-icon">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h4>Dr A.K Gupta</h4>
+        <p>MBBS MS</p>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-icon">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h4>Dr Amit Kumar</h4>
+        <p>MBBS DNB</p>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-icon">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h4>Dr A.K Verma</h4>
+        <p>BAMS</p>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- Testimonials -->
 <section>
