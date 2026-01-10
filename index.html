@@ -288,12 +288,19 @@ section { padding: 70px 20px; }
 
 
 
-/* Floating Buttons */
+/* ================= FLOATING CALL & WHATSAPP ================= */
 .float-btns{
-  position:fixed;bottom:20px;right:20px;
-  display:flex;flex-direction:column;gap:15px
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:9999;
 }
-.float-btns a {
+
+/* Common Button Style */
+.float-btns a{
   width:60px;
   height:60px;
   border-radius:50%;
@@ -302,17 +309,48 @@ section { padding: 70px 20px; }
   justify-content:center;
   font-size:26px;
   color:#fff;
-  background: #ffb60b; /* yellow */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transition: all 0.4s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  transition:all 0.4s ease;
 }
 
-.float-btns a:hover {
-  transform: scale(1.2);   /* no rotation */
-  background: #1ebe5d;     /* green on hover */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+/* Call Button (Yellow) */
+.call-btn{
+  background:#ffb703;
 }
 
+/* WhatsApp Button (Green) */
+.whatsapp-btn{
+  background:#25D366;
+}
+
+/* Hover Effect (Yellow ➜ Green + Zoom) */
+.float-btns a:hover{
+  transform:scale(1.2);
+  background:#1ebe5d;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Icon visibility boost */
+.float-btns i{
+  font-size:28px;
+}
+
+/* Mobile friendly */
+@media(max-width:576px){
+  .float-btns{
+    bottom:20px;
+    right:15px;
+  }
+}
+.whatsapp-btn{
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
 
 /* ================= FOOTER ================= */
 footer {
@@ -645,11 +683,16 @@ footer {
   <div class="footer-bottom">© 2026 Dr CBP Verma Memorial Poly Clinic | 🚀 Powered by <a href="mailto:sparkedge555@gmail.com">SparkEdge</a></div>
 </footer>
   
-<!-- Sticky Buttons -->
-<div class="sticky-buttons">
-  <a href="tel:+911234567890" class="call-btn"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/911234567890" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<!-- Floating Call & WhatsApp Buttons -->
+<div class="float-btns">
+  <a href="tel:+917464070292" class="call-btn" aria-label="Call Now">
+    <i class="fas fa-phone"></i>
+  </a>
+  <a href="https://wa.me/917464070292" class="whatsapp-btn" target="_blank" aria-label="WhatsApp Chat">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>
+
 
 <script>
 // Navbar toggle
