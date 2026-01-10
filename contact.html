@@ -3,21 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Dr CBP Verma Memorial Poly Clinic</title>
+
 <meta name="description" content="Contact Dr CBP Verma Memorial Poly Clinic, Madhopur, Samastipur. Call, WhatsApp or visit us for OPD, emergency, ambulance, lab, X-ray and Ayushman Bharat cashless treatment services.">
+
+<!-- SEO SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Dr CBP Verma Memorial Poly Clinic",
-  "url": "https://yourwebsite.com/contact.html",
-  "logo": "https://yourwebsite.com/favicon.png",
-  "image": "https://yourwebsite.com/hospital.jpg",
-  "description": "Dr CBP Verma Memorial Poly Clinic provides OPD, emergency services, ambulance, X-ray, lab testing, surgeries and Ayushman Bharat cashless treatment in Madhopur, Samastipur.",
-  "telephone": [
-    "+91-7464070292",
-    "+91-9931993934"
-  ],
-  "email": "drcbpvermamemorialpolyclinic@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Madhopur, Bibhutipur",
@@ -26,29 +22,13 @@
     "postalCode": "848211",
     "addressCountry": "IN"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "25.7626",
-    "longitude": "85.8190"
-  },
-  "openingHours": "Mo-Su 10:00-14:00",
-  "medicalSpecialty": [
-    "PrimaryCare",
-    "Emergency",
-    "DiagnosticLab",
-    "Surgical"
-  ],
-  "priceRange": "₹₹",
-  "sameAs": [
-    "https://wa.me/917464070292",
-    "https://maps.app.goo.gl/ABnZ7kvLYgmjBZtV7Vh"
-  ]
+  "telephone": ["+917464070292","+919931993934"],
+  "email": "drcbpvermamemorialpolyclinic@gmail.com",
+  "openingHours": "Mo-Su 10:00-14:00"
 }
 </script>
 
-
-<title>Contact | Dr CBP Verma Memorial Poly Clinic</title>
-
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -76,188 +56,164 @@ header{
   padding:15px 20px;
   display:flex;justify-content:space-between;align-items:center
 }
-.logo{font-size:22px;font-weight:700;color:var(--primary)}
-.nav-links{display:flex;gap:22px;align-items:center}
-.nav-links a{font-weight:500}
-.menu-toggle{display:none;font-size:26px;cursor:pointer;color:var(--primary)}
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+  transition: 0.3s;
+}
+.logo:hover{
+  color:BLACK(--accent);
+  transform: scale(1);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
 
+
+.nav-links{
+  display:flex;align-items:center;gap:26px
+}
+.nav-links a{font-weight:500;position:relative}
+
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;
+  background:var(--secondary);transition:.3s
+}
+.nav-links a:hover::after{width:100%}
+
+
+.menu-toggle{
+  display:none;font-size:26px;
+  cursor:pointer;color:var(--primary)
+}
+
+/* Appointment Button */
+.appointment-btn{
+  background:linear-gradient(45deg,var(--accent),#ffd166);
+  padding:10px 22px;
+  border-radius:30px;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(244,162,97,.4)
+}
+.appointment-btn::after{display:none}
+.appointment-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(244,162,97,.6)
+}
+
+/* Dropdown */
+.nav-links ul{list-style:none}
+.nav-links ul li{position:relative}
+.nav-links ul li ul{
+  position:absolute;top:36px;left:0;
+  background:#fff;
+  min-width:200px;
+  border-radius:12px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  display:none;padding:10px 0
+}
+.nav-links ul li:hover ul{display:block}
+.nav-links ul li ul a{
+  display:block;padding:10px 20px;font-size:14px
+}
+.nav-links ul li ul a:hover{
+  background:rgba(27,154,170,.1);
+  color:var(--secondary)
+}
+
+/* Mobile */
 @media(max-width:991px){
   .menu-toggle{display:block}
   .nav-links{
-    position:fixed;right:-100%;top:70px;
+    position:fixed;top:70px;right:-100%;
     width:260px;height:calc(100% - 70px);
-    background:#fff;flex-direction:column;
-    padding-top:30px;transition:.3s;
-    box-shadow:-5px 0 30px rgba(0,0,0,.1)
+    background:#fff;
+    flex-direction:column;
+    padding-top:30px;
+    transition:.3s
   }
   .nav-links.active{right:0}
-}
-
-
-
-/* ================= NAVBAR ENHANCEMENTS ================= */
-
-/* Remove default underline everywhere */
-.nav-links a {
-  text-decoration: none;
-}
-
-/* Premium hover underline animation */
-.nav-links > a,
-.nav-links ul li > a {
-  position: relative;
-  padding: 6px 0;
-}
-
-.nav-links > a::after,
-.nav-links ul li > a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--secondary);
-  transition: width 0.35s ease;
-}
-
-.nav-links > a:hover::after,
-.nav-links ul li > a:hover::after {
-  width: 100%;
-}
-
-/* Navbar spacing on desktop */
-@media (min-width: 992px) {
-  .nav-links {
-    gap: 26px;
+  .nav-links ul li ul{
+    position:static;
+    box-shadow:none
   }
 }
 
-/* ================= BOOK APPOINTMENT BUTTON ================= */
-.appointment-btn {
-  background: linear-gradient(45deg, var(--accent), #f1c27d);
-  color: #000 !important;
-  padding: 10px 22px;
-  border-radius: 30px;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(244,162,97,0.4);
-  transition: all 0.35s ease;
-}
-
-/* Disable underline for button */
-.appointment-btn::after {
-  display: none !important;
-}
-
-/* Hover animation */
-.appointment-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(244,162,97,0.6);
-}
-
-/* ================= DROPDOWN STYLING ================= */
-.nav-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links ul li {
-  position: relative;
-}
-
-/* Dropdown box */
-.nav-links ul li ul {
-  position: absolute;
-  top: 38px;
-  left: 0;
-  background: #fff;
-  min-width: 200px;
-  border-radius: 12px;
-  padding: 10px 0;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-  display: none;
-  z-index: 1000;
-}
-
-/* Show dropdown on hover (desktop) */
-@media (min-width: 992px) {
-  .nav-links ul li:hover > ul {
-    display: block;
-  }
-}
-
-/* Dropdown links */
-.nav-links ul li ul li a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 14px;
-  color: var(--dark);
-  transition: all 0.3s ease;
-}
-
-.nav-links ul li ul li a:hover {
-  background: rgba(27,154,170,0.08);
-  color: var(--secondary);
-}
-
-/* ================= MOBILE DROPDOWN ================= */
-@media (max-width: 991px) {
-  .nav-links ul li ul {
-    position: static;
-    box-shadow: none;
-    display: none;
-    padding-left: 10px;
-  }
-
-  .nav-links ul li.active ul {
-    display: block;
-  }
-}
-
-  
 /* ================= HERO ================= */
 .hero{
   background:linear-gradient(rgba(15,76,117,.85),rgba(15,76,117,.85)),
-             url('hospital.jpg') center/cover;
-  color:#fff;text-align:center;padding:90px 20px
+  url('hospital.jpg') center/cover;
+  padding:90px 20px;
+  color:#fff;text-align:center
 }
-.hero h1{font-size:42px}
-.hero p{opacity:.9;margin-top:8px}
+.hero h1, .hero p{
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
 
-/* ================= CONTAINER ================= */
+@keyframes fadeInUp{
+  0%{opacity:0; transform: translateY(20px);}
+  100%{opacity:1; transform: translateY(0);}
+}
+
+
+/* ================= CONTENT ================= */
 .container{max-width:1100px;margin:auto;padding:60px 20px}
 
-/* ================= CONTACT CARDS ================= */
+/* Contact Cards */
 .contact-cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;margin-bottom:50px
 }
-.card{
-  background:#fff;border-radius:22px;padding:30px;
-  text-align:center;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  transition:.3s
-}
-.card:hover{transform:translateY(-6px)}
-.card i{font-size:34px;color:var(--secondary);margin-bottom:15px}
-.card h3{color:var(--primary);margin-bottom:8px}
-.card a, .card p{
-  font-size:14px;
-  word-break:break-word;   /* 🔥 FIX FOR EMAIL OVERFLOW */
+
+.card a{
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  max-width: 100%;
+  font-size: 14px;
 }
 
-/* ================= FORM ================= */
+.card{
+  text-align:center;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:22px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition: all 0.4s ease;
+}
+.card:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.card i{
+  transition: all 0.4s;
+}
+.card:hover i{
+  color: var(--accent);
+  transform: rotate(15deg) scale(1.2);
+}
+
+.card i{
+  font-size:34px;color:var(--secondary);margin-bottom:15px
+}
+.card a{color:var(--primary);font-weight:500}
+
+/* Form */
 .form-box{
-  background:#fff;padding:45px;border-radius:28px;
+  background:#fff;
+  padding:45px;
+  border-radius:28px;
   box-shadow:0 12px 35px rgba(0,0,0,.08);
   margin-bottom:55px
 }
-.form-box h2{text-align:center;margin-bottom:25px}
 .input-group{position:relative;margin-bottom:18px}
 .input-group i{
-  position:absolute;top:50%;left:18px;
+  position:absolute;left:18px;top:50%;
   transform:translateY(-50%);
   color:var(--secondary)
 }
@@ -265,59 +221,92 @@ header{
 .input-group textarea{
   width:100%;
   padding:15px 15px 15px 48px;
-  border:1px solid #ddd;border-radius:14px;
-  transition:.3s
-}
-.input-group input:focus,
-.input-group textarea:focus{
-  border-color:var(--secondary);
-  box-shadow:0 0 0 3px rgba(27,154,170,.15);
-  outline:none
+  border-radius:14px;
+  border:1px solid #ddd
 }
 .form-box button{
-  width:100%;padding:16px;
-  border:none;border-radius:30px;
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:30px;
   background:linear-gradient(45deg,var(--accent),#ffb703);
-  font-weight:600;cursor:pointer;
-  transition:.3s
+  font-weight:600;
+  cursor:pointer;
+  transition: 0.4s ease;
 }
 .form-box button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(0,0,0,.25)
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(244,162,97,0.5);
 }
 
-/* ================= MAP ================= */
+
+/* Map */
 .map{
-  border-radius:30px;
-  padding:12px;
   background:#fff;
-  box-shadow:0 15px 40px rgba(0,0,0,.15)
+  padding:10px;
+  border-radius:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  transition: all 0.5s ease;
+  overflow: hidden;
 }
-.map iframe{
-  width:100%;height:420px;border:0;
-  border-radius:22px
+.map:hover{
+  transform: scale(1.03);
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
 }
 
-/* ================= FLOAT BUTTONS ================= */
+.mapouter{
+  position:relative;
+  width:100%;
+  max-width:100%;
+  height:450px;
+  border-radius:28px;
+  overflow:hidden;
+}
+
+.gmap_canvas{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.gmap_iframe{
+  width:100%!important;
+  height:100%!important;
+  border:0;
+  transition: transform 0.4s ease;
+  border-radius:28px;
+}
+.gmap_iframe:hover{
+  transform: scale(1.05);
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.3));
+}
+
+
+
+/* Floating Buttons */
 .float-btns{
   position:fixed;bottom:20px;right:20px;
-  display:flex;flex-direction:column;gap:15px;z-index:999
+  display:flex;flex-direction:column;gap:15px
 }
 .float-btns a{
-  width:60px;height:60px;border-radius:50%;
+  width:60px;height:60px;
+  border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:26px;color:#fff;
-  box-shadow:0 10px 30px rgba(0,0,0,.3);
-  transition:.3s
+  color:#ffb60b;font-size:26px;
+  transition: all 0.3s ease;
 }
-.float-btns a:hover{transform:scale(1.1)}
-.call{background:#28a745}
-.whatsapp{background:#25D366}
+.float-btns a:hover{
+  transform: scale(1.2) rotate(-10deg);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+.call:hover{background:#218838}
+.whatsapp:hover{background:#1ebe5d}
 
-/* ================= FOOTER ================= */
+
+/* Footer */
 footer{
   background:#0a2e44;color:#fff;
-  padding:70px 20px 30px
+  padding:60px 20px 30px
 }
 .footer-grid{
   max-width:1100px;margin:auto;
@@ -325,28 +314,65 @@ footer{
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:30px
 }
-footer h3{color:var(--accent);margin-bottom:15px}
-footer a{opacity:.9}
-footer a:hover{opacity:1}
-
-.footer-icons{
-  display:flex;gap:15px;margin-top:15px
+footer a{
+  color:#fff;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+  font-weight:500;
+  transition: all 0.4s ease;
+  position: relative;
 }
+
+footer a:hover{
+  color: var(--accent);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  transform: translateX(5px) scale(1.05);
+}
+
+footer h3{
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.footer-bottom a{
+  color:#fff;
+  text-decoration:none;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.footer-bottom a:hover{
+  color: var(--accent);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  transform: scale(1.05) translateY(-2px);
+}
+
+.footer-bottom:hover{
+  transform: scale(1.02);
+}
+
 .footer-icons a{
-  width:40px;height:40px;border-radius:50%;
-  background:rgba(255,255,255,.15);
+  width:40px;height:40px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
   display:flex;align-items:center;justify-content:center;
-  transition:.3s
+  transition: all 0.3s ease;
 }
 .footer-icons a:hover{
-  background:var(--accent);
-  color:#000;
-  transform:translateY(-3px)
+  transform: scale(1.2);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .footer-bottom{
-  text-align:center;margin-top:30px;
-  opacity:.7;font-size:13px
+  text-align:center;
+  font-size:14px;
+  opacity:0.85;
+  color:#fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  line-height:1.6;
 }
 </style>
 </head>
@@ -354,33 +380,33 @@ footer a:hover{opacity:1}
 <body>
 
 <header>
- <div class="nav-links">
-  <a href="index.html">Home</a>
+  <div class="navbar">
+    <div class="logo">Dr CBP Verma Memorial Poly Clinic</div>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
 
-  <!-- Dropdown -->
-  <ul>
-    <li>
-      <a href="#">Services <i class="fas fa-caret-down"></i></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+
       <ul>
-        <li><a href="#">OPD</a></li>
-        <li><a href="#">Surgeries</a></li>
-        <li><a href="#">Medical Shop</a></li>
-        <li><a href="#">X-Ray</a></li>
-        <li><a href="#">Labs</a></li>
-        <li><a href="#">Ambulance</a></li>
-        <li><a href="#">Emergency Services</a></li>
+        <li>
+          <a href="#">Services <i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="#">OPD</a></li>
+            <li><a href="#">Surgeries</a></li>
+            <li><a href="#">Medical Shop</a></li>
+            <li><a href="#">X-Ray</a></li>
+            <li><a href="#">Labs</a></li>
+            <li><a href="#">Ambulance</a></li>
+            <li><a href="#">Emergency</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
 
-  <a href="doctors.html">Doctors</a>
-  <a href="blog.html">Health Blog</a>
-  <a href="contact.html">Contact</a>
-
-  <!-- Highlighted Button -->
-  <a href="appointment.html" class="appointment-btn">Book Appointment</a>
-</div>
-
+      <a href="doctors.html">Doctors</a>
+      <a href="contact.html">Contact</a>
+      <a href="appointment.html" class="appointment-btn">Book Appointment</a>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
@@ -390,15 +416,12 @@ footer a:hover{opacity:1}
 
 <div class="container">
 
-  <!-- CONTACT CARDS -->
   <div class="contact-cards">
     <div class="card">
       <i class="fas fa-phone"></i>
       <h3>Call</h3>
-      <a href="tel:+917464070292">+91 7464070292</a><br>
-      <a href="tel:+919931993934">+91 9931993934</a>
+      <a href="tel:+917464070292">+91 7464070292</a>
     </div>
-
     <div class="card">
       <i class="fas fa-envelope"></i>
       <h3>Email</h3>
@@ -406,7 +429,6 @@ footer a:hover{opacity:1}
         drcbpvermamemorialpolyclinic@gmail.com
       </a>
     </div>
-
     <div class="card">
       <i class="fas fa-clock"></i>
       <h3>OPD Timing</h3>
@@ -414,34 +436,37 @@ footer a:hover{opacity:1}
     </div>
   </div>
 
-  <!-- FORM -->
   <div class="form-box">
     <h2>Send Us a Message</h2>
-    <form ">
+    <form onsubmit="window.open('https://wa.me/917464070292?text=Hello%20I%20want%20to%20contact%20the%20clinic','_blank');return false;">
       <div class="input-group">
         <i class="fas fa-user"></i>
-        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" placeholder="Your Name" required>
       </div>
       <div class="input-group">
         <i class="fas fa-phone"></i>
-        <input type="tel" name="phone" placeholder="Mobile Number" required>
+        <input type="tel" placeholder="Mobile Number" required>
       </div>
       <div class="input-group">
         <i class="fas fa-message"></i>
-        <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+        <textarea rows="4" placeholder="Your Message"></textarea>
       </div>
-      <button type="submit">Send Message</button>
+      <button type="submit">Send via WhatsApp</button>
     </form>
   </div>
 
-  <!-- MAP -->
-  <div class="map">
-    <iframe src="https://www.google.com/maps?q=Madhopur+Bibhutipur+Samastipur&output=embed"></iframe>
+ <div class="map">
+  <div class="mapouter">
+    <div class="gmap_canvas">
+      <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=DR CBP VERMA MEMORIAL POLY CLINIC&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+      </iframe>
+    </div>
   </div>
+</div>
 
 </div>
 
-<!-- FLOAT -->
 <div class="float-btns">
   <a href="tel:+917464070292" class="call"><i class="fas fa-phone"></i></a>
   <a href="https://wa.me/917464070292" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
@@ -450,33 +475,49 @@ footer a:hover{opacity:1}
 <footer>
   <div class="footer-grid">
     <div>
-      <h3>Clinic</h3>
-      <p>Dr CBP Verma Memorial Poly Clinic</p>
-    </div>
+  <!-- LOGO SPACE -->
+  <div style="margin-bottom:12px;">
+    <!-- Agar image logo ho -->
+    <!-- <img src="logo.png" alt="Clinic Logo" style="height:55px;"> -->
+
+    <!-- Abhi ke liye text logo -->
+    <h3 style="font-size:22px;margin-bottom:4px;">
+      Dr CBP Verma Memorial Poly Clinic
+    </h3>
+  </div>
+
+  <!-- SLOGAN / PARAGRAPH -->
+  <p style="font-size:14px;line-height:1.6;opacity:.85;">
+    Trusted healthcare partner in Madhopur, Samastipur providing
+    quality OPD, emergency, diagnostics and cashless treatment
+    under Ayushman Bharat.
+  </p>
+</div>
+
     <div>
       <h3>Contact</h3>
-      <a href="mailto:drcbpvermamemorialpolyclinic@gmail.com">
-        drcbpvermamemorialpolyclinic@gmail.com
-      </a><br>
-      <a href="tel:+917464070292">7464070292</a>
-
+      <a href="mailto:drcbpvermamemorialpolyclinic@gmail.com">📧 Email</a>
+      <a href="tel:+917464070292">📞 Call</a>
       <div class="footer-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-google"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/917464070292"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
+ <div class="footer-bottom">
+  © 2026 Dr CBP Verma Memorial Poly Clinic | 🚀 Powered by <a href="mailto:sparkedge555@gmail.com"><strong>SparkEdge</strong></a>
+</div>
 
-  <div class="footer-bottom">
-    © 2026 Dr CBP Verma Memorial Poly Clinic
-  </div>
+
 </footer>
 
 <script>
-document.querySelector('.menu-toggle').onclick=
-()=>document.querySelector('.nav-links').classList.toggle('active');
+document.querySelector('.menu-toggle').onclick=()=>{
+  document.querySelector('.nav-links').classList.toggle('active');
+}
 </script>
 
 </body>
 </html>
+
