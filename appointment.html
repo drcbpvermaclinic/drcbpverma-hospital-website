@@ -159,9 +159,33 @@ footer{background:#0a2e44;color:#fff;padding:60px 20px 30px;}
 .footer-contact-btn{display:inline-block; padding:8px 12px; margin-bottom:5px; border-radius:25px; background:var(--accent); color:#000; text-decoration:none; font-weight:500; transition:.3s;}
 .footer-contact-btn:hover{background:#e5943d; transform:scale(1.05); color:#000;}
 
-/* Footer social icons underline removed */
-.footer-social a{text-decoration:none; color:#fff; margin-right:10px; font-size:18px; transition:.3s;}
-.footer-social a:hover{color:var(--secondary);}
+/* Footer social icons container */
+.footer-social {
+  display: flex;         /* horizontal layout */
+  gap: 12px;             /* space between icons */
+  margin-top: 10px;
+}
+
+/* Each social icon in circle */
+.footer-social a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  width: 40px;           /* circle size */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: var(--secondary);
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
 /* Footer bottom */
 .footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.7;}
