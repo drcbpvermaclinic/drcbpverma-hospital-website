@@ -33,17 +33,51 @@ header {
   z-index: 1000;
 }
 .navbar { max-width: 1200px; margin:auto; padding: 15px 20px; display:flex; justify-content:space-between; align-items:center; }
-.logo { font-size: 22px; font-weight:700; color: var(--primary); }
-.nav-links { display:flex; align-items:center; gap:20px; }
-.nav-links a { font-weight:500; position:relative; color: var(--dark); }
-.nav-links a::after { content:''; position:absolute; width:0; height:2px; background: var(--secondary); left:0; bottom:-5px; transition:0.3s; }
-.nav-links a:hover::after { width:100%; }
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+  transition: 0.3s;
+}
+.logo:hover{
+  color: var(--accent);
+  transform: scale(1.05);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.nav-links a{
+  font-weight:500;
+  position:relative;
+  color: var(--dark);
+  text-decoration:none;
+  transition: color 0.3s;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--secondary);
+  transition:.3s;
+}
+.nav-links a:hover::after{ width:100%; color: var(--accent); }
 
 /* Dropdown */
 .nav-links ul { list-style:none; position:relative; }
 .nav-links ul li { position:relative; }
-.nav-links ul li ul { position:absolute; top:40px; left:0; display:none; background:#fff; padding:10px 0; box-shadow:0 10px 30px rgba(0,0,0,0.1); border-radius:10px; min-width:180px; }
-.nav-links ul li:hover > ul { display:block; }
+.nav-links ul li ul {
+  position:absolute; top:40px; left:0; display:none;
+  background:#fff; padding:10px 0; box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  border-radius:10px; min-width:180px;
+  opacity:0; transform: translateY(10px); transition: all 0.4s ease;
+}
+.nav-links ul li:hover ul { display:block; opacity:1; transform:translateY(0); }
 .nav-links ul li ul li { padding:10px 20px; }
 .nav-links ul li ul li a { color: var(--dark); }
 .nav-links ul li ul li a:hover { color: var(--secondary); }
@@ -64,11 +98,55 @@ header {
 .hero-section h1 { font-size:42px; margin-bottom:15px; }
 .hero-section p { font-size:18px; margin-bottom:20px; }
 
+/* ================= DOCTOR CARDS ================= */
+.doctor-cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin:50px 0;
+}
+.doctor-card {
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  text-align:center;
+  transition: all 0.4s ease;
+}
+.doctor-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:0 25px 50px rgba(0,0,0,0.2);
+}
+.doctor-card img {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  transition: transform 0.4s;
+}
+.doctor-card:hover img { transform: scale(1.1); }
+.doctor-card h3 { color: var(--primary); margin-bottom:10px; }
+.doctor-card p { font-size:14px; line-height:1.6; margin-bottom:15px; }
+.appointment-btn {
+  display:inline-block;
+  padding:10px 20px;
+  background: linear-gradient(45deg,var(--accent),#ffb703);
+  color:#000;
+  font-weight:600;
+  border-radius:25px;
+  box-shadow:0 10px 25px rgba(244,162,97,0.4);
+  transition: all 0.3s;
+  text-decoration:none;
+}
+.appointment-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:0 15px 35px rgba(244,162,97,0.6);
+}
+
 /* ================= FORM CONTAINER ================= */
 .container { max-width:800px; margin:auto; padding:40px 20px; background:#fff; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.1); margin-top:-50px; }
 .container h2 { text-align:center; color: var(--primary); margin-bottom:30px; }
-
-/* Form */
 .appointment-form { display:flex; flex-direction:column; gap:20px; }
 .appointment-form .form-group { position:relative; }
 .appointment-form input, .appointment-form select, .appointment-form textarea { width:100%; padding:15px; border:1px solid #ddd; border-radius:10px; font-size:15px; outline:none; transition:0.3s; }
@@ -80,29 +158,79 @@ header {
 .appointment-form select:not([value=""]) + label,
 .appointment-form textarea:focus + label,
 .appointment-form textarea:not(:placeholder-shown) + label { top:-10px; left:15px; font-size:12px; color: var(--accent); background:#fff; padding:0 5px; }
-
-/* Submit Button */
 .appointment-form button { background: var(--accent); color:#000; font-weight:600; padding:15px; border:none; border-radius:25px; cursor:pointer; transition:0.3s; }
 .appointment-form button:hover { transform:translateY(-3px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
 
 /* ================= STICKY BUTTONS ================= */
 .sticky-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
-.sticky-buttons a { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; }
-.call-btn { background: linear-gradient(45deg, #28a745, #1e7e34); }
-.call-btn:hover { transform: scale(1.1); }
-.whatsapp-btn { background: linear-gradient(45deg, #25D366, #128C7E); }
-.whatsapp-btn:hover { transform: scale(1.1); }
+.sticky-buttons a { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; font-size: 26px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; text-decoration:none; }
+.sticky-buttons a:hover { transform: scale(1.1); }
 
-/* Footer */
-footer { background:#0a2e44; color:#fff; padding:60px 20px 30px; }
-.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:1100px; margin:auto; }
-.footer-grid h3 { color: var(--accent); margin-bottom:15px; }
-.footer-grid p, .footer-grid a { font-size:14px; opacity:0.9; }
-.footer-logo { display:block; margin-bottom:20px; width:120px; }
-.footer-bottom { text-align:center; margin-top:30px; font-size:13px; opacity:0.7; }
+/* ================= FOOTER ================= */
+footer { 
+    background:#0a2e44; 
+    color:#fff; 
+    padding:60px 20px 30px; 
+}
+
+.footer-grid { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
+    gap:30px; 
+    max-width:1100px; 
+    margin:auto; 
+}
+
+.footer-grid h3 { 
+    color: var(--accent); 
+    margin-bottom:15px; 
+    font-size:16px;
+}
+
+.footer-grid p, .footer-grid a { 
+    font-size:14px; 
+    color: black;  /* make fully visible */
+    opacity: 1;   /* remove transparency */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-grid a:hover { 
+    color: var(--accent); 
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5); 
+    transform: scale(1.05) translateY(-2px);
+}
+
+.footer-logo { 
+    display:block; 
+    margin-bottom:20px; 
+    width:120px; 
+}
+
+.footer-bottom { 
+    text-align:center; 
+    margin-top:30px; 
+    font-size:13px; 
+    color:#fff;   /* fully visible */
+    opacity:1;    /* remove transparency */
+}
+
+.footer-bottom a { 
+    color:#fff; 
+    text-decoration:none; 
+    font-weight:600;
+    transition: all 0.4s ease; 
+}
+
+.footer-bottom a:hover { 
+    color: var(--accent); 
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5); 
+    transform: scale(1.05) translateY(-2px); 
+}
 
 /* Responsive */
 @media(max-width:600px){ .hero-section h1{font-size:32px;} .hero-section p{font-size:16px;} }
+
 </style>
 </head>
 <body>
@@ -130,7 +258,7 @@ footer { background:#0a2e44; color:#fff; padding:60px 20px 30px; }
       <a href="doctors.html">Doctors</a>
       <a href="blog.html">Health Blog</a>
       <a href="contact.html">Contact</a>
-      <a href="appointment.html" style="color:var(--accent); font-weight:700;">Book Appointment</a>
+      <a href="appointment.html" class="appointment-btn">Book Appointment</a>
     </div>
   </div>
 </header>
@@ -141,56 +269,79 @@ footer { background:#0a2e44; color:#fff; padding:60px 20px 30px; }
   <p>Easy, fast, and secure appointment booking with our expert doctors</p>
 </section>
 
-<!-- Appointment Form -->
+<!-- WhatsApp Booking Link -->
+<div style="text-align:center; margin:30px 0;">
+  <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment" target="_blank" class="appointment-btn">📲 Book via WhatsApp</a>
+</div>
+
+<!-- Doctor Cards -->
+<div class="container">
+  <h2>👨‍⚕️ Our Doctors</h2>
+  <div class="doctor-cards">
+    <div class="doctor-card">
+      <img src="doctor1.jpg" alt="Dr A.K. Verma">
+      <h3>Dr A.K. Verma</h3>
+      <p>Specialist in General Medicine with 15+ years of experience. Expert in OPD consultation and patient care.</p>
+      <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment%20with%20Dr%20A.K.%20Verma" class="appointment-btn" target="_blank">Book Appointment</a>
+    </div>
+    <div class="doctor-card">
+      <img src="doctor2.jpg" alt="Dr Amit Kumar">
+      <h3>Dr Amit Kumar</h3>
+      <p>Experienced physician in outpatient care. Skilled in diagnostics, prescriptions, and patient counseling.</p>
+      <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment%20with%20Dr%20Amit%20Kumar" class="appointment-btn" target="_blank">Book Appointment</a>
+    </div>
+    <div class="doctor-card">
+      <img src="doctor3.jpg" alt="Dr A.K. Gupta">
+      <h3>Dr A.K. Gupta (Ortho)</h3>
+      <p>Orthopedic specialist with expertise in bone and joint treatments, fractures, and post-surgery care.</p>
+      <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment%20with%20Dr%20A.K.%20Gupta" class="appointment-btn" target="_blank">Book Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- Appointment Form via Formspree -->
 <div class="container">
   <h2>📝 Fill Your Details</h2>
-  <form class="appointment-form" name="appointment" method="POST" data-netlify="true" action="/thank-you.html">
-    <input type="hidden" name="form-name" value="appointment">
-
+  <form class="appointment-form" action="https://formspree.io/f/mreezlnl" method="POST">
     <div class="form-group">
       <input type="text" name="patient_name" placeholder=" " required>
       <label>Patient Name</label>
     </div>
-
     <div class="form-group">
       <input type="tel" name="mobile" placeholder=" " required>
       <label>Mobile Number</label>
     </div>
-
     <div class="form-group">
       <select name="doctor" required>
-        <option value="" disabled selected></option>
+        <option value="" disabled selected>Select Doctor</option>
         <option>Dr A.K. Verma</option>
         <option>Dr Amit Kumar</option>
         <option>Dr A.K. Gupta (Ortho)</option>
       </select>
       <label>Select Doctor</label>
     </div>
-
     <div class="form-group">
       <input type="date" name="preferred_date" required>
       <label>Preferred Date</label>
     </div>
-
     <div class="form-group">
       <textarea name="message" placeholder=" "></textarea>
       <label>Problem / Notes (optional)</label>
     </div>
-
     <button type="submit">Submit Appointment Request</button>
   </form>
 </div>
 
-<!-- Sticky WhatsApp & Call -->
+<!-- Sticky Buttons -->
 <div class="sticky-buttons">
-  <a href="tel:+917464070292" class="call-btn"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+917464070292"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/917464070292?text=Hello%20I%20want%20to%20book%20an%20appointment" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <!-- Footer -->
 <footer>
   <div class="container footer-grid">
-    <img src="favicon.png" class="footer-logo" alt="Clinic Logo">
+    <img src="logo.png.jpeg" class="footer-logo" alt="Clinic Logo">
     <div>
       <h3>Clinic Address</h3>
       <p>Madhopur, Bibhutipur, Samastipur – 848211</p>
@@ -205,7 +356,9 @@ footer { background:#0a2e44; color:#fff; padding:60px 20px 30px; }
       <p>10:00 AM – 2:00 PM</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Dr CBP Verma Memorial Poly Clinic</div>
+  <div class="footer-bottom">
+    © 2026 Dr CBP Verma Memorial Poly Clinic | 🚀 Powered by <a href="mailto:sparkedge555@gmail.com"><strong>SparkEdge</strong></a>
+  </div>
 </footer>
 
 <script>
@@ -213,8 +366,6 @@ footer { background:#0a2e44; color:#fff; padding:60px 20px 30px; }
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-
-// Mobile dropdown toggle
 const dropdowns = document.querySelectorAll('.nav-links ul li > a');
 dropdowns.forEach(drop => {
   drop.addEventListener('click', (e) => {
@@ -225,6 +376,5 @@ dropdowns.forEach(drop => {
   });
 });
 </script>
-
 </body>
 </html>
